@@ -1,0 +1,24 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/jabber-client/node_modules
+/jabber-server/node_modules
+/.pnp
+/jabber-client/.pnp.js
+
+# testing
+/jabber-client//coverage
+
+# production
+/jabber-client//build
+
+# misc
+/jabber-client/.DS_Store
+/jabber-client/.env.local
+/jabber-client/.env.development.local
+/jabber-client/.env.test.local
+/jabber-client/.env.production.local
+
+/jabber-client/npm-debug.log*
+/jabber-client/yarn-debug.log*
+/jabber-client/yarn-error.log*
