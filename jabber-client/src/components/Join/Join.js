@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 function Join() {
   const [name, setName] = useState('');
-  const [room, setRoom] = useState(' ');
+  const [room, setRoom] = useState('');
 
   return (
     <div className="join-outer-container">
-      <div className="inner-container">
+      <div className="join-inner-container">
         <h1 className="join-heading">Join</h1>
         <div>
           <input type="text" placeholder="Name" className="join-input" onChange={e => setName(e.target.value)} />
