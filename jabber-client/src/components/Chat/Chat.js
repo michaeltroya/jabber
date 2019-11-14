@@ -12,13 +12,17 @@ function Chat() {
 
   useEffect(() => {
     const { room, name } = queryString.parse(window.location.search);
-
     socket = io(ENDPOINT);
 
     setName(name);
     setRoom(room);
 
     socket.emit('join', { name, room });
+
+    return () => {
+      socket.emit('disconnect');
+      socket.off();
+    };
   }, [ENDPOINT]);
 
   return (
