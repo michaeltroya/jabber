@@ -8,26 +8,52 @@ let socket;
 function Chat() {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
-  const ENDPOINT = 'localhost:5000';
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
+  const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
 
   useEffect(() => {
-    const { room, name } = queryString.parse(window.location.search);
+    const { name, room } = queryString.parse(window.location.search);
+
     socket = io(ENDPOINT);
 
-    setName(name);
     setRoom(room);
+    setName(name);
 
-    socket.emit('join', { name, room });
+    socket.emit('join', { name, room }, error => {
+      if (error) {
+        alert(error);
+      }
+    });
+  }, [ENDPOINT]);
+
+  useEffect(() => {
+    socket.on('message', message => {
+      setMessages([...messages, message]);
+    });
 
     return () => {
       socket.emit('disconnect');
+
       socket.off();
     };
-  }, [ENDPOINT]);
+  }, [messages]);
+
+  const sendMessage = event => {
+    event.preventDefault();
+
+    if (message) {
+      socket.emit('sendMessage', message, () => setMessage(''));
+    }
+  };
+
+  console.log(message, messages);
 
   return (
-    <div>
-      <h1>Chat</h1>
+    <div className="chat-outer-container">
+      <div className="chat-inner-container">
+        <input type="text" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={e => (e.key === 'Enter' ? sendMessage(e) : null)} />
+      </div>
     </div>
   );
 }
