@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import InfoBar from '../InfoBar/InfoBar';
+import Input from '../Input/Input';
+import Messages from '../Messages/Messages';
 
 import queryString from 'query-string';
 import io from 'socket.io-client';
@@ -11,7 +13,7 @@ function Chat() {
   const [room, setRoom] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
+  const ENDPOINT = 'http://localhost:5000/';
 
   useEffect(() => {
     const { name, room } = queryString.parse(window.location.search);
@@ -54,7 +56,8 @@ function Chat() {
     <div className="chat-outer-container">
       <div className="chat-inner-container">
         <InfoBar room={room} />
-        {/* <input type="text" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={e => (e.key === 'Enter' ? sendMessage(e) : null)} /> */}
+        <Messages />
+        <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
       </div>
     </div>
   );
