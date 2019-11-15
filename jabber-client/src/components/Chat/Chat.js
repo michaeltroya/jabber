@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
+// import Users from '../Users/Users';
 
 import queryString from 'query-string';
 import io from 'socket.io-client';
@@ -11,6 +12,7 @@ let socket;
 function Chat() {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
+  // const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const ENDPOINT = 'http://localhost:5000/';
@@ -34,6 +36,10 @@ function Chat() {
     socket.on('message', message => {
       setMessages([...messages, message]);
     });
+
+    // socket.on('roomData', ({ users }) => {
+    //   setUsers(users);
+    // });
 
     return () => {
       socket.emit('disconnect');

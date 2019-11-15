@@ -1,0 +1,44 @@
+.message-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.message-box {
+  background: $accent-color;
+  border-radius: 20px;
+  padding: 5px 20px;
+  color: white;
+  display: inline-block;
+  max-width: 80%;
+}
+
+.message-text {
+  width: 100%;
+  letter-spacing: 0;
+  float: left;
+  font-size: 1.1em;
+  word-wrap: break-word;
+}
+
+.sent-by {
+  display: flex;
+  align-items: center;
+  font-family: Helvetica;
+  color: #a2a2a2;
+  letter-spacing: 0.3px;
+  margin: 0.5rem;
+}
+
+.light-box {
+  background-color: $off-white-color;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.dark-text {
+  color: $heading-color;
+}

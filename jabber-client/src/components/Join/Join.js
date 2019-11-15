@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../images/logo2.png';
 
 function Join() {
   const [name, setName] = useState('');
@@ -7,7 +8,7 @@ function Join() {
 
   return (
     <div className="join-container">
-      <h1 className="join-heading">Join</h1>
+      <img src={logo} alt="logo" className="logo" />
       <div>
         <input type="text" placeholder="Name" className="join-input" onChange={e => setName(e.target.value)} />
       </div>
@@ -16,7 +17,7 @@ function Join() {
       </div>
       <Link onClick={e => (!name || !room ? e.preventDefault() : null)} to={`/chat?name=${name}&room=${room}`}>
         <button className="join-button" type="submit">
-          Sign in
+          Enter Chat
         </button>
       </Link>
     </div>

@@ -10,7 +10,7 @@ function Message({ message: { user, text }, name }) {
   }
 
   return isSentByCurrentUser ? (
-    <div className="message-container justify-end">
+    <div className="message-container">
       <p className="sent-by">{trimmedName}</p>
       <div className="message-box blue-box">
         <p className="message-text white-text">{ReactEmoji.emojify(text)}</p>
@@ -19,7 +19,7 @@ function Message({ message: { user, text }, name }) {
   ) : (
     <div className="message-container justify-start">
       <div className="message-box light-box">
-        <p className="message-text dark-text">{text}</p>
+        <p className="message-text dark-text">{ReactEmoji.emojify(text)}</p>
       </div>
       <p className="sent-by">{user}</p>
     </div>
