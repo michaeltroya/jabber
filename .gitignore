@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 .vscode
+.netlify
 # dependencies
 /jabber-client/node_modules
 /jabber-server/node_modules
@@ -7,10 +8,10 @@
 /jabber-client/.pnp.js
 
 # testing
-/jabber-client//coverage
+/jabber-client/coverage
 
 # production
-/jabber-client//build
+/jabber-client/build
 
 # misc
 /jabber-client/.DS_Store
