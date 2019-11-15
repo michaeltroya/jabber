@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import InfoBar from '../InfoBar/InfoBar';
 
 import queryString from 'query-string';
 import io from 'socket.io-client';
@@ -52,7 +53,8 @@ function Chat() {
   return (
     <div className="chat-outer-container">
       <div className="chat-inner-container">
-        <input type="text" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={e => (e.key === 'Enter' ? sendMessage(e) : null)} />
+        <InfoBar room={room} />
+        {/* <input type="text" value={message} onChange={e => setMessage(e.target.value)} onKeyPress={e => (e.key === 'Enter' ? sendMessage(e) : null)} /> */}
       </div>
     </div>
   );

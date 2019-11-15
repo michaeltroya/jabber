@@ -1,0 +1,17 @@
+.info-bar {
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.info-left-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h3 {
+    color: white;
+    margin-left: 1rem;
+  }
+}
