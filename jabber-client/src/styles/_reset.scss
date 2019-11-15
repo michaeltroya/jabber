@@ -35,6 +35,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -71,6 +72,13 @@ select {
   font: inherit;
 }
 
+textarea,
+select,
+input,
+button {
+  outline: none;
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -79,4 +87,8 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+#root {
+  height: 100vh;
 }

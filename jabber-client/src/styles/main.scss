@@ -1,7 +1,11 @@
+//FONTS
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 //RESETS
 @import 'reset';
 
 //COMPONENTS
+@import './app';
 @import '../components/Join/join';
 @import '../components/Chat/chat';
 @import '../components/InfoBar/infobar';

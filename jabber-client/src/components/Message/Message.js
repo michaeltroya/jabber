@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactEmoji from 'react-emoji';
 
 function Message({ message: { user, text }, name }) {
   let isSentByCurrentUser = false;
@@ -12,7 +13,7 @@ function Message({ message: { user, text }, name }) {
     <div className="message-container justify-end">
       <p className="sent-by">{trimmedName}</p>
       <div className="message-box blue-box">
-        <p className="message-text white-text">{text}</p>
+        <p className="message-text white-text">{ReactEmoji.emojify(text)}</p>
       </div>
     </div>
   ) : (

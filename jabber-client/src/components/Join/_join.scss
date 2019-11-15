@@ -1,0 +1,38 @@
+.join-container {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.join-heading {
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.join-button {
+  background-color: white;
+  border: solid 1px red;
+  padding: 0.5rem 1rem;
+  border-radius: 25%/50%;
+  text-transform: uppercase;
+  color: red;
+  :focus {
+    outline: none !important;
+  }
+}
+
+.join-input {
+  margin-bottom: 2rem;
+  padding: 0.25rem 0;
+  border: 0;
+  border-bottom: 1px solid #f9214a;
+  outline: 0;
+  background: transparent;
+  color: black;
+  letter-spacing: 0.125rem;
+  transition: all 0.5s cubic-bezier(0.4, 0.25, 0.8, 0.3);
+}
+
+::placeholder {
+}

@@ -53,12 +53,10 @@ function Chat() {
   console.log(message, messages);
 
   return (
-    <div className="chat-outer-container">
-      <div className="chat-inner-container">
-        <InfoBar room={room} />
-        <Messages messages={messages} name={name} />
-        <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
-      </div>
+    <div className="chat-container">
+      <InfoBar room={room} />
+      <Messages messages={messages} name={name} />
+      <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
     </div>
   );
 }

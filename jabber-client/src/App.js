@@ -8,10 +8,12 @@ import Chat from './components/Chat/Chat';
 import './styles/main.scss';
 
 const App = () => (
-  <Router>
-    <Route path="/" exact component={Join} />
-    <Route path="/chat" component={Chat} />
-  </Router>
+  <div className="app-container">
+    <Router>
+      <Route path="/" exact component={Join} />
+      <Route path="/chat" component={Chat} />
+    </Router>
+  </div>
 );
 
 export default App;
