@@ -56,7 +56,7 @@ function Chat() {
     <div className="chat-outer-container">
       <div className="chat-inner-container">
         <InfoBar room={room} />
-        <Messages />
+        <Messages messages={messages} name={name} />
         <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
       </div>
     </div>
