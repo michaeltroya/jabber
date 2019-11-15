@@ -12,8 +12,14 @@ function Message({ message: { user, text }, name }) {
   return isSentByCurrentUser ? (
     <div className="message-container">
       <p className="sent-by">{trimmedName}</p>
-      <div className="message-box blue-box">
-        <p className="message-text white-text">{ReactEmoji.emojify(text)}</p>
+      <div className="message-box">
+        <p className="message-text">{ReactEmoji.emojify(text)}</p>
+      </div>
+    </div>
+  ) : user === 'admin' ? (
+    <div className="message-container justify-center">
+      <div className="message-box green-box">
+        <p className="message-text dark-text">{ReactEmoji.emojify(text)}</p>
       </div>
     </div>
   ) : (

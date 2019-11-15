@@ -45,7 +45,7 @@ io.on('connection', socket => {
     const user = removeUser(socket.id);
 
     if (user) {
-      io.to(user.room).emit('message', { user: ' admin', text: `${user.name} has left the chat` });
+      io.to(user.room).emit('message', { user: 'admin', text: `${user.name} has left the chat` });
     }
     console.log('Connection closed!');
   });
